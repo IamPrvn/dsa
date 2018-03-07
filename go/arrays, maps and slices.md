@@ -60,7 +60,7 @@ slice := []string{99: ""}
 
 ##### nil slice
 
- as mentioned the zero value of reference type in go is nil, slice is a reference type. They’re useful when you want to represent a slice that doesn’t exist, such as when an exception occurs in a function that returns a slice.
+ as mentioned the zero value of reference type in go is nil, slice is a reference type. They’re useful when you want to represent a slice that doesn’t exist, such as when an exception occurs in a function that returns a slice. A nil slice has a length and capacity of 0 and has no underlying array.
 
 ```go
  var slice int[]
