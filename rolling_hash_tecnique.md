@@ -8,9 +8,9 @@ H = s[0] \times B^{m-1} + s[1] \times B^{m-2} + … + s[m - 2] \times B^1 + s[m 
 $$
 Now for a string `n` with all possible substrings of length `m`  we can calculate   H~0~, H~1~ ... H~n-m-1~ in  `O(n)` 
 $$
-H_{i+1} =  ( H_i  -  s[i]  \times B^{m-1} ) \times m + s[i+m] \times B^0
+H_{i+1} =  ( H_i  -  s[i]  \times B^{m-1} ) \times B + s[i+m] \times B^0
 \\ or \\
-H_{i} =  ( H_{i-1}  -  s[i-1]  \times B^{m-1} ) \times m + s[i+m-1] \times B^0
+H_{i} =  ( H_{i-1}  -  s[i-1]  \times B^{m-1} ) \times B + s[i+m-1] \times B^0
 $$
 Doing it programmatically :-
 

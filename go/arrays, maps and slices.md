@@ -143,10 +143,6 @@ Passing the 24 bytes between functions is fast and easy. This is the beauty of s
 
 #### map
 
-
-
-
-
 - The built-in function **len** can be used to retrieve the length of a slice or map. 
 - The built-in function **cap** only works on slices.                                      
 - Through the use of composition, you can create multidimensional arrays and slices. You can also create maps with values that are slices and other maps. **A slice can’t be used as a map key.**                                      

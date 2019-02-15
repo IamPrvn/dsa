@@ -9,9 +9,9 @@
   y = x-1   # 1001 (startig from 1 at last 2nd pos to last everything is reversed)
   ```
 
-   Thus, `x & ~(x - 1)`  consists of only the lowest set bit of x. However, this only tells us the bit value, not the index of the bit. The 386 introduced CPU instructions for bit scanning: BSF (bit scan forward) and BSR (bit scan reverse). GCC exposes these instructions through the built-in functions __builtin_ctz (count trailing zeros) and __builtin_clz (count leading zeros). These are the most convenient way to find bit indices for C++ programmers in TopCoder. Be warned though: the return value is undefined for an argument of zero.
+   Thus, `x & ~(x - 1)`  consists of only the lowest set bit of x. However, this only tells us the bit value, not the index of the bit.  `x ^ (x & x-1)` also does the same. The 386 introduced CPU instructions for bit scanning: BSF (bit scan forward) and BSR (bit scan reverse). GCC exposes these instructions through the built-in functions  **__builtin_ctz (count trailing zeros) and _builtin_clz (count leading zeros)**. These are the most convenient way to find bit indices for C++ programmers in TopCoder. Be warned though: the return value is undefined for an argument of zero.
 
-* `x = x & (x-1)` is used for traverssing through the set bits. Each iteration clears the last set bit. Another way is `x = x - (x & ~(x-1))`. Another way is `x = x - (x & ~x)`.
+* `x = x & (x-1)` is used for traverssing through the set bits. Each iteration clears the last set bit. Another way is `x = x - (x & ~(x-1))`. Another way is `x = x - (x & -x)`.
 
 * `~(x-1) = -x` . Let num be the integer whose last digit we want to isolate. In binary notation num can be represented as a1b, where a represents binary digits before the last digit and b represents zeroes after the last digit. 
 
@@ -35,7 +35,7 @@
 
 * Set negation 
 
-  `ALL_BITS ^ A            #ALL_BITS is a number with 1′s for all bits corresponding to the elements of the domain`
+  `ALL_BITS ^ A            #A = ALL_BITS is a number with 1′s for all bits corresponding to the elements of the domain`
 
 * Set bit
 
